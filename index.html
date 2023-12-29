@@ -1,37 +1,52 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	 <link rel="stylesheet" href="style.css">
-	<title>Responsive Layout</title>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1 class="header_text">Do you wanna go out with me?</h1>
+      </div>
+      <p>
+        <a href="https://www.instagram.com/saileshsingh36">@saileshsingh36</a>
+      </p>
+      <div class="gif_container">
+        <img
+          src="https://i.postimg.cc/pdNqPxx1/milk-and-mocha-cute.gif"
+          alt="Cute animated illustration"
+        />
+      </div>
+      <div class="buttons">
+        <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+        <button
+          class="btn"
+          id="noButton"
+          onmouseover="moveButton()"
+          onclick="moveButton()"
+        >
+          No
+        </button>
 
+        <script>
+          function nextPage() {
+            window.location.href = "yes.html";
+          }
 
-
-</head>
-<body>
-	<div class="row">
-	<h1>Our Menu</h1>
-  <div class="col-lg-4 col-md-6 col-sm-12" id="container">
-    <p>Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Deserunt ab quia eum possimus debitis illo consequuntur cum impedit! Non hic ratione minus reiciendis esse laboriosam rem fugit, quam ut iure!</p>
-  	<p id="p1">Chicken</p>
-
-  	</div>
-
-  
-
-  <div class="col-lg-4 col-md-6 col-sm-12" id="container"><p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Quis, iste, nostrum dignissimos unde officiis doloremque debitis fugit ut! Voluptate odit nam unde harum aliquam aperiam quibusdam quod corrupti provident pariatur!</p>
-
-  	<p id="p2">Beef</p>
-
-  </div>
-
-  <div class="col-lg-4 col-md-12 col-sm-12" id="container"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, earum omnis natus voluptate, repudiandae inventore molestias eos reprehenderit corrupti nesciunt animi ea obcaecati vero numquam porro quidem? Numquam at, et!</p>
-
-  	<p  id="p3">Sushi</p>
-
-  </div>
-
-	</div>	
-
-</body>
+          function moveButton() {
+            var x =
+              Math.random() *
+              (window.innerWidth -
+                document.getElementById("noButton").offsetWidth);
+            var y =
+              Math.random() *
+              (window.innerHeight -
+                document.getElementById("noButton").offsetHeight);
+            document.getElementById("noButton").style.left = `${x}px`;
+            document.getElementById("noButton").style.top = `${y}px`;
+          }
+        </script>
+      </div>
+    </div>
+  </body>
 </html>
